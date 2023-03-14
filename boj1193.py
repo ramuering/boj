@@ -1,29 +1,22 @@
-import sys
-input = sys.stdin.readline
-
-t = int(input())
-
-stack = []
-run = ['push', 'pop', 'top', 'size', 'empty']
-
-for _ in range(t):
-    s = list(input().split())
-    if s[0] == run[0]:
-        stack.append(s[1])
-    if s[0] == run[1]:
-        if len(stack) == 0:
-            print(-1)
+n = int(input())
+cnt = 0
+r = 1
+chk = True
+for i in range(1, 10000001):
+    a, b = i, 1
+    while a >= 1 and b <= i:
+        if r % 2 != 0:
+            x, y = a, b
         else:
-            print(stack.pop())
-    if s[0] == run[2]:
-        if len(stack) == 0:
-            print(-1)
-        else:
-            print(stack[len(stack)-1])
-    if s[0] == run[3]:
-        print(len(stack))
-    if s[0] == run[4]:
-        if len(stack) == 0:
-            print(1)
-        else:
-            print(0)
+            x, y = b, a
+        cnt += 1
+        print(x, y)
+        if cnt == n:
+            print("{}/{}".format(x, y))
+            chk = False
+            break
+        a -= 1
+        b += 1
+    if chk == False:
+        break
+    r += 1
