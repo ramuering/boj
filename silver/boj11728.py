@@ -4,4 +4,5 @@ b=list(map(int,input().split()))
 
 c=sorted(a+b)
 
-print(c)
+for i in c:
+  print(i,end=' ')
