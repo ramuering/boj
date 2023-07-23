@@ -11,7 +11,6 @@ def factor(x):
     return 1
 def solution(a, b):
     n=gcd(a,b)
-    a=a//n
     b=b//n
     
     return factor(b)
