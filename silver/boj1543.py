@@ -1,7 +1,7 @@
 s=input()
 chk=input()
 
-ans=0
+cnt=0
 start=0
 while True:
   idx=s.find(chk,start)
@@ -9,6 +9,6 @@ while True:
     break
   else:
     if chk in s[start:]:
-      ans+=1
+      cnt+=1
       start=idx+len(chk)
-print(ans)
+print(cnt)
