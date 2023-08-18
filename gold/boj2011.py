@@ -16,5 +16,3 @@ else:
       else:
         dp[i]+=dp[i-2]
   print(dp[-1]%1000000)
-      
-      
