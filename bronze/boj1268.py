@@ -16,7 +16,6 @@ chk = [set(chk[x]) for x in range(n)]
 ans = -1
 mlen = -1
 for i in range(n):
-    print(i, len(chk[i]))
     if mlen < len(chk[i]):
         ans = i
         mlen = len(chk[i])
