@@ -6,7 +6,7 @@ dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
 
-def melting():  # 빙산 녹는 것
+def melting(): 
     new_board = [[0 for _ in range(M)] for _ in range(N)]
     for i in range(N):
         for j in range(M):
@@ -30,7 +30,6 @@ while True:
     board = melting()
     cnt = 0
     visited = [[0 for _ in range(M)] for _ in range(N)]
-    # bfs가 2번 돌면 정답출력, 1번이면 다음 년도까지 진행, 0이면 0출력
     for i in range(N):
         for j in range(M):
             if board[i][j] != 0 and visited[i][j] == 0:
