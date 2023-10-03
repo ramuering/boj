@@ -1,12 +1,14 @@
 import sys
-sys.setrecursionlimit(100000)
+from collections import deque
 
 
-def dfs(x):
-    for i in graph[x]:
-        if vis[i] == 0:
-            vis[i] = x
-            dfs(i)
+def bfs():
+    while queue:
+        now = queue.popleft()
+        for nxt in graph[now]:
+            if ans[nxt] == 0:
+                ans[nxt] = now
+                queue.append(nxt)
 
 
 n = int(sys.stdin.readline())
@@ -17,9 +19,11 @@ for _ in range(n-1):
     graph[a].append(b)
     graph[b].append(a)
 
-vis = [0]*(n+1)
+queue = deque()
+queue.append(1)
+ans = [0]*(n+1)
+bfs()
 
-dfs(1)
 
 for i in range(2, n+1):
-    print(vis[i])
+    print(ans[i])
