@@ -13,6 +13,6 @@ for _ in range(t):
         else:
             clothes[b] = [a]
     ans = 1
-    for i in range(len(list(clothes.values()))):
-        ans *= len(list(clothes.values())[i])+1
+    for key in clothes.keys():
+        ans *= len(clothes[key])+1
     print(ans-1)
